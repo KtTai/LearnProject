@@ -6,7 +6,6 @@ import net.sourceforge.pinyin4j.format.HanyuPinyinOutputFormat;
 import net.sourceforge.pinyin4j.format.HanyuPinyinToneType;
 import net.sourceforge.pinyin4j.format.HanyuPinyinVCharType;
 import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
-import org.junit.platform.commons.util.StringUtils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -65,7 +64,7 @@ public class transferLogonNameToPinYin {
     }
 
     public static String toPinYin(String str) throws BadHanyuPinyinOutputFormatCombination {
-        if(StringUtils.isNotBlank(str)) {
+        if(str != null && !"".equals(str)) {
             char[] charArray = str.toCharArray();
             StringBuffer strSB = new StringBuffer();
             for(int i=0; i<charArray.length; i++) {
