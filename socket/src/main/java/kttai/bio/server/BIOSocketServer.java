@@ -2,8 +2,10 @@ package kttai.bio.server;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
 
 public class BIOSocketServer {
 
@@ -17,11 +19,12 @@ public class BIOSocketServer {
                 inputStream.read(b);
                 String s = new String(b);
                 System.out.println(s);
-                if (b.length < 0) {
-                    inputStream.close();
-                    accept.close();
-                    break;
-                }
+
+                OutputStream outputStream = accept.getOutputStream();
+                outputStream.write("ni hao ".getBytes(StandardCharsets.UTF_8));
+
+                inputStream.close();
+                accept.close();
             }
 
         } catch (IOException e) {
