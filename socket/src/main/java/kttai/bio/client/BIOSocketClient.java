@@ -29,6 +29,8 @@ public class BIOSocketClient {
             System.out.println(sBack);
             outputStream.close();
             inputStream.close();
+
+            socket.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

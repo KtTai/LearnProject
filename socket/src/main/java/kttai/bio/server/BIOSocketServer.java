@@ -21,7 +21,7 @@ public class BIOSocketServer {
                 System.out.println(s);
 
                 OutputStream outputStream = accept.getOutputStream();
-                outputStream.write("ni hao ".getBytes(StandardCharsets.UTF_8));
+                outputStream.write("ni hao1 ".getBytes(StandardCharsets.UTF_8));
 
                 inputStream.close();
                 accept.close();
