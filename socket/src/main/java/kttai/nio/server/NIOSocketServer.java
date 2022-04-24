@@ -94,7 +94,7 @@ public class NIOSocketServer {
                         }
                     } else
                     if (selectionKey.isWritable()) {
-
+                        logger.info("读事件 进入");
                     }
                 });
             }
